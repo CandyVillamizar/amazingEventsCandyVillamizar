@@ -1,0 +1,71 @@
+*{
+    margin-top: 0;
+    margin-bottom: 0;
+    box-sizing: border-box;
+}
+h1{
+    position: absolute;
+    font-size: 7rem;
+    margin-top: 15rem;
+    margin-left: 30rem;
+    color: blueviolet;
+}
+#past{
+    position: absolute;
+    font-size: 7rem;
+    margin-top: 15rem;
+    margin-left: 25rem;
+    color: blueviolet;
+}
+#up{
+    position: absolute;
+    font-size: 7rem;
+    margin-top: 15rem;
+    margin-left: 15rem;
+    color: blueviolet;
+}
+#cont{
+    position: absolute;
+    font-size: 7rem;
+    margin-top: 15rem;
+    margin-left: 25rem;
+    color: blueviolet;
+}
+#text{
+    color: white;
+}
+
+.form{
+    margin-top: 2rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    padding: 2rem;
+}
+
+.table{
+    margin-top: 2rem;
+    border-color: black;
+    border-style: double;
+
+}
+
+#Cardetails{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.img1{
+    margin-top: 2rem;
+    margin-left: 1rem;
+    border-radius: 0.5rem;
+    border-style: double;
+    width: 90%;
+    height: 80%;
+}
+
+.card{
+    background-color: bisque;
+}
