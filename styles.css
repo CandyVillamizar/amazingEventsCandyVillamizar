@@ -3,34 +3,31 @@
     margin-bottom: 0;
     box-sizing: border-box;
 }
-h1{
-    position: absolute;
-    font-size: 7rem;
-    margin-top: 15rem;
-    margin-left: 30rem;
-    color: blueviolet;
+.carousel-caption{
+    color: black;
+    font-size: 150px;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+
 }
-#past{
-    position: absolute;
-    font-size: 7rem;
-    margin-top: 15rem;
-    margin-left: 25rem;
-    color: blueviolet;
+#banner1{
+    height: 20rem;
 }
-#up{
-    position: absolute;
-    font-size: 7rem;
-    margin-top: 15rem;
-    margin-left: 15rem;
-    color: blueviolet;
+#banner2{
+    height: 20rem;
 }
-#cont{
-    position: absolute;
-    font-size: 7rem;
-    margin-top: 15rem;
-    margin-left: 25rem;
-    color: blueviolet;
+#banner3{
+    height: 20rem;
 }
+#banner4{
+    height: 20rem;
+}
+#banner5{
+    height: 20rem;
+}
+
+
 #text{
     color: white;
 }
@@ -66,6 +63,16 @@ h1{
     height: 80%;
 }
 
+section{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+}
+
 .card{
     background-color: bisque;
+    width: 18rem;
+    margin-top: 2rem;
+    margin-left: 3rem;
 }
