@@ -1,4 +1,4 @@
-console.log("prueba");
+
 const data = {
     currentDate: "2023-01-01",
     events: [
@@ -198,7 +198,7 @@ const data = {
 
   
   let events
-  for (let i= 0; i<14; i++) {
+  for (let i= 0; i<data.events.length; i++) {
   
   if (data.currentDate<data.events[i].date) {
     function pintarTarjetas(events) {

@@ -63,7 +63,7 @@
     height: 80%;
 }
 
-section{
+#contenedor-tarjetas{
     display: flex;
     flex-direction: row;
     justify-content:space-evenly;
@@ -76,3 +76,4 @@ section{
     margin-top: 2rem;
     margin-left: 3rem;
 }
+
