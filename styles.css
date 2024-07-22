@@ -3,6 +3,9 @@
     margin-bottom: 0;
     box-sizing: border-box;
 }
+body{
+    min-height: 80vh;
+}
 .carousel-caption{
     color: black;
     font-size: 150px;
@@ -77,3 +80,18 @@
     margin-left: 3rem;
 }
 
+.Contenedor{
+    display: grip;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.form-control{
+    width: 25rem;
+}
+.item-list {
+    list-style-type: none;
+    padding: 0;
+}

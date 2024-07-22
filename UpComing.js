@@ -220,3 +220,45 @@ const data = {
     pintarTarjetas(data.events)
   }   
   }
+  
+// Función para agrupar objetos por categoría
+function agruparPorCategoria(objetos) {
+  let categorias = {};
+
+  data.events.forEach(objeto => {
+      let categoria = objeto.category;
+      if (!categorias[categoria]) {
+          categorias[categoria] = [];
+      }
+      categorias[categoria].push(objeto);
+  });
+
+  return categorias;
+}
+
+// Agrupar objetos por categoría
+let objetosAgrupados = agruparPorCategoria(data.events);
+
+console.log(objetosAgrupados);
+
+// Si quieres convertir las categorías agrupadas en un array
+let arrayCategorias = Object.keys(objetosAgrupados).map(categoria => ({
+  categoria: categoria,
+  objetos: objetosAgrupados[categoria]
+}));
+
+console.log(arrayCategorias);
+
+for (let i= 0; i < arrayCategorias.length; i++){
+function crearCategoria(_id) {
+  let contenedorCategoria= document.getElementById("category")
+  let categoria = document.createElement('div')
+  categoria.className= "form-check"
+  categoria.innerHTML=`
+  <input class="form-check-input" type="checkbox" value="" id="${data.events[i]._id}">
+  <label class="form-check-label" for="${data.events[i]._id}">${arrayCategorias[i].categoria}</label>
+  `
+  contenedorCategoria.appendChild(categoria)
+}
+crearCategoria(data.events)
+}

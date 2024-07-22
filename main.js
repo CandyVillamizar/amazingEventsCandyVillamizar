@@ -215,8 +215,117 @@ let events
         </div>`
         contenedor.appendChild(tarjeta)
       }
-      pintarTarjetas(data.events)
+      pintarTarjetas(data.events);
+      
+
   }
 
+// Función para agrupar objetos por categoría
+function agruparPorCategoria(objetos) {
+    let categorias = {};
+
+    data.events.forEach(objeto => {
+        let categoria = objeto.category;
+        if (!categorias[categoria]) {
+            categorias[categoria] = [];
+        }
+        categorias[categoria].push(objeto);
+    });
+
+    return categorias;
+}
+
+// Agrupar objetos por categoría
+let objetosAgrupados = agruparPorCategoria(data.events);
+
+console.log(objetosAgrupados);
+
+// Si quieres convertir las categorías agrupadas en un array
+let arrayCategorias = Object.keys(objetosAgrupados).map(categoria => ({
+    categoria: categoria,
+    objetos: objetosAgrupados[categoria]
+}));
+
+console.log(arrayCategorias);
+
+for (let i= 0; i < arrayCategorias.length; i++){
+  function crearCategoria(_id) {
+    let contenedorCategoria= document.getElementById("category")
+    let categoria = document.createElement('div')
+    categoria.className= "form-check"
+    categoria.innerHTML=`
+    <input class="form-check-input" type="checkbox" value="" id="${data.events[i]._id}">
+    <label class="form-check-label" for="${data.events[i]._id}">${arrayCategorias[i].categoria}</label>
+    `
+    contenedorCategoria.appendChild(categoria)
+  }
+  crearCategoria(data.events)
+}
 
 
+        // Referencias a elementos del DOM
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const cardContainer = document.getElementById('contenedor-tarjetas');
+      
+        // Función para mostrar las tarjetas en el contenedor
+        function mostrarTarjetas(items) {
+            cardContainer.innerHTML = ''; // Limpiar contenedor
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.innerHTML = `
+                <img src=${item.image} class = "card-img-top h-50" alt ="festival">
+                <div class="card-body">
+                <h5 class="card-title">${item.name}</h5>
+                <p class="card-text">${item.description}.</p>
+                <div class="d-flex flex-row justify-content-between">
+                <p>Price:${item.price}</p>
+                <a href="./Details.html" class="btn btn-primary">Details</a>
+                </div>
+                </div>`
+                cardContainer.appendChild(card);
+            });
+        }
+
+        // Mostrar todas las tarjetas al cargar la página
+        mostrarTarjetas(data.events);
+
+        const checkboxes = document.querySelectorAll('.form-check-input');
+        // Función para filtrar las tarjetas
+        function filtrarTarjetas(){
+          {
+            const categoriasSeleccionadas = Array.from(checkboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value);
+            if (categoriasSeleccionadas.length === 0) {
+              mostrarTarjetas(data.events); // Mostrar todas las tarjetas si no hay filtros seleccionados
+            } else {
+              const itemsFiltrados = data.events.filter(item =>
+                  categoriasSeleccionadas.includes(item.category)
+              );
+              mostrarTarjetas(itemsFiltrados);
+            }
+        } ;
+        {
+          const filtro = searchInput.value.toLowerCase()
+          const itemsFiltrados = data.events.filter(item => 
+                item.name.toLowerCase().includes(filtro) || 
+                item.description.toLowerCase().includes(filtro)|| 
+                item.category.toLowerCase().includes(filtro)
+            );
+            mostrarTarjetas(itemsFiltrados);
+        }
+            
+        }
+
+        // Agregar evento al botón de búsqueda
+        searchButton.addEventListener('click', filtrarTarjetas);
+
+        // También se puede filtrar mientras se escribe en el campo de búsqueda
+        searchInput.addEventListener('input', filtrarTarjetas);
+
+ // Agregar evento a los checkboxes
+ checkboxes.forEach(checkbox => {
+     checkbox.addEventListener('change', filtrarTarjetas);
+ });
