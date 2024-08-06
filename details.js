@@ -20,7 +20,7 @@ fetch('https://aulamindhub.github.io/amazing-api/events.json')
             document.getElementById("Cardetails").innerHTML = `
                 <h5 class="card-title">${tarjeta.name}</h5>
                 <p class="card-text"><small class="text-body-secondary">Date: ${tarjeta.date}</small></p>
-                <p class="card-text">${tarjeta.description}</p>
+                <p class="card-text">Description: ${tarjeta.description}</p>
                 <p class="card-text"><small class="text-body-secondary">Category: ${tarjeta.category}</small></p>
                 <p class="card-text"><small class="text-body-secondary">Place: ${tarjeta.place}</small></p>
                 <p class="card-text"><small class="text-body-secondary">Capacity: ${tarjeta.capacity}</small></p>
