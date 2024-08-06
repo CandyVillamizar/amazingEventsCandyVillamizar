@@ -128,8 +128,8 @@ function calcularEstadisticasPorCategoria(eventos) {
 
     eventos.forEach(event => {
         const categoria = event.category;
-        const ingreso = (event.price * event.assistance) || 0; // Ingreso total para el evento
-        const asistencia = event.assistance || 0; // Asistencia total para el evento
+        const ingreso = (event.price * (event.assistance||event.estimate)) || 0; // Ingreso total para el evento
+        const asistencia = (event.assistance||event.estimate) || 0; // Asistencia total para el evento
 
         // Inicializa la categoría si no existe
         if (!categoriasData[categoria]) {
