@@ -55,6 +55,10 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    background-color: aqua;
+    width: 40rem;
+    height: 30rem;
+    margin-left: 5rem;
 }
 
 .img1{
@@ -62,8 +66,8 @@ body{
     margin-left: 1rem;
     border-radius: 0.5rem;
     border-style: double;
-    width: 90%;
-    height: 80%;
+    width: 50%;
+    height: 40%;
 }
 
 #contenedor-tarjetas{
@@ -94,4 +98,12 @@ body{
 .item-list {
     list-style-type: none;
     padding: 0;
+}
+
+#imagen{
+    margin-top: 10rem;
+    width: 20rem;
+    height: 15rem;
+    border-radius: 0.5rem;
+    border-style: double;
 }
